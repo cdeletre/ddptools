@@ -44,57 +44,6 @@ Note: `--` are required if there is no other option after `-d`
 
 `ddprelay.py` is a tool that receives raw rgb24 frames (eg. rawvideo from ffmpeg) and forward them raw using [DDP protocol](http://www.3waylabs.com/ddp/) to compatible endpoints such as [WLED](https://kno.wled.ge/).
 
-### usage
-
-    ./artnetsend.py -h
-    usage: arnetplay.py [-h] [-v] [-W WIDTH] [-H HEIGHT] [-d DESTINATION [DESTINATION ...]] [-p PORT] [-f FPS] [-r REPEAT] [-L LOOP] [-s] [-b] filepath [filepath ...]
-
-    Send raw images using Artnet protocol
-
-    positional arguments:
-    filepath              Raw image (rgb24) filepath
-
-    options:
-    -h, --help            show this help message and exit
-    -v, --verbose         Verbose level (on stderr)
-    -W WIDTH, --width WIDTH
-                            Frame width in pixels
-    -H HEIGHT, --height HEIGHT
-                            Frame height in pixels
-    -d DESTINATION [DESTINATION ...], --destination DESTINATION [DESTINATION ...]
-                            IP destination address (default 127.0.0.1). Multiple unicast adresses can be provided.
-    -p PORT, --port PORT  UDP destination port (default 6454)
-    -f FPS, --fps FPS     Frame Per Second (default 5)
-    -r REPEAT, --repeat REPEAT
-                            UDP packet repeat (default none)
-    -L LOOP, --loop LOOP  Number of loop to play (infinite loop by default)
-    -s, --show            Show frames (on stdout)
-    -b, --box             Use boxes instead of dots when showing frames
-
-    Made with ♥ in Python
-
-### show with dots
-
-    ./artnetsend.py -s -L 1 ./raw16x16/goomba_1.data
-
-![artnetsend.py run with goomba raw images show with dots](./pics/goomba-dot.png)
-
-### show with squares
-
-    ./artnetsend.py -b -s -L 1 ./raw16x16/goomba_1.data
-
-![artnetsend.py run with goomba raw images show with squares](./pics/goomba-square.png)
-
-### example
-
-    ./artnetsend.py -v -s -L 1 ./raw16x16/mario-bonus*
-
-![artnetsend.py run with mario-bonus raw images](./pics/mario-bonus-run.png)
-
-## artnetrelay.py
-
-`artnetrelay.py` is a tool that receives raw rgb24 frames (eg. rawvideo from ffmpeg) and forward them raw using [Artnet protocol](https://en.wikipedia.org/wiki/Art-Net) to compatible endpoints such as [WLED](https://kno.wled.ge/).
-
 ## usage
 
     usage: ddprelay.py [-h] [-v] [-W WIDTH] [-H HEIGHT] [-d DESTINATION [DESTINATION ...]] [-p PORT] [-l LISTEN_PORT] [-r REPEAT] [-F FRAMES] [-s] [-b]
